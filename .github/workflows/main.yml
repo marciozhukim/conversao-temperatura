@@ -38,10 +38,21 @@ jobs:
     needs: [ ConversaoTemperatura-CI ]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: conversao-temperatura-kubernetes-cloud
       
       - name: Setting K8s Context
         uses: Azure/k8s-set-context@v2
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
+          
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v3.0
+        with:
+          images: marciozhu/conversao-temperatura:v${{ github.run_number }}
+          manifests: |
+            k8s/deplyment.yaml
+            
