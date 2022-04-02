@@ -1,7 +1,7 @@
 name: CI-CD-Conversao-Temperatura
 on:
   push:
-    branches: [ main ]
+    branches: [ main, conversao-temperatura-kubernetes-cloud ]
   workflow_dispatch:
 
 jobs:
