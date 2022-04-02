@@ -1,4 +1,4 @@
-name: CI
+name: CI-CD-Conversao-Temperatura
 on:
   push:
     branches: [ conversao-temperatura-kubernetes-cloud ]
