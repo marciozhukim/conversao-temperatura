@@ -28,5 +28,5 @@ jobs:
          push: true
          tags: |
           marciozhu/conversao-temperatura:latest
-          marciozhu/conversao-temperatura:${{ github.run_number }}
+          marciozhu/conversao-temperatura:v${{ github.run_number }}
           
